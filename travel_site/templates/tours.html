@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block header %}Лучшие туры{% endblock %}
+
+{% block content %}
+<div class="tours-container">
+    {% for tour in tours %}
+    <div class="tour-card">
+        <div class="tour-image">
+            <img src="{{ url_for('static', filename=tour.image_path) }}" alt="{{ tour.name }}">
+        </div>
+        <div class="tour-info">
+            <div class="tour-title">{{ tour.name }}</div>
+            <div class="tour-description">{{ tour.description }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="regenerate-button-container">
+    <a href="{{ url_for('tours') }}" class="regenerate-button">Регенерировать варианты</a>
+</div>
+{% endblock %}
