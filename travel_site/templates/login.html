@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block header %}Вход{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <!-- Форма входа -->
+    <form action="{{ url_for('login') }}" method="POST" class="login-form">
+        <div class="form-title">Почта</div>
+        <input type="email" name="email" class="form-input" placeholder="Введите вашу почту" required>
+        <div class="form-title">Пароль</div>
+        <input type="password" name="password" class="form-input" placeholder="Введите ваш пароль" required>
+        <button type="submit" class="login-button">Войти</button>
+        <a href="{{ url_for('register') }}" class="register-button">Регистрация</a>
+    </form>
+</div>
+{% endblock %}

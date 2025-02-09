@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block header %}Регистрация{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <!-- Форма регистрации -->
+    <form action="{{ url_for('register') }}" method="POST" class="register-form">
+        <div class="form-title">Почта</div>
+        <input type="email" name="email" class="form-input" placeholder="Введите вашу почту" required>
+        <div class="form-title">Пароль</div>
+        <input type="password" name="password" class="form-input" placeholder="Введите ваш пароль" required>
+        <div class="form-title">Подтвердите пароль</div>
+        <input type="password" name="confirm_password" class="form-input" placeholder="Подтвердите ваш пароль" required>
+        <button type="submit" class="register-button">Зарегистрироваться</button>
+    </form>
+</div>
+{% endblock %}
