@@ -1,1 +1,23 @@
-<h1>Hello!</h1>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-container">
+    <!-- Левая половина: "О нас" и кнопка "Зарегистрироваться" -->
+    <div class="left-section">
+        <div class="about-section">
+            <div class="about-title">О нас</div>
+            <div class="about-text">
+                Наша команда создала этот сайт для того чтобы группы людей ищущие приятный и весёлый отдых могли без особых проблем найти подходящий для них тур в любом уголке земли.
+            </div>
+        </div>
+        <a href="{{ url_for('register') }}" class="register-button">
+            Зарегистрироваться
+        </a>
+    </div>
+
+    <!-- Правая половина: изображение -->
+    <div class="right-section">
+        <img class="main-image" src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Placeholder">
+    </div>
+</div>
+{% endblock %}
